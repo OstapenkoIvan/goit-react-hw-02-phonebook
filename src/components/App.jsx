@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import { Filter } from './Filter/Filter';
+import s from './App.module.css';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
+import Container from './Container/Container';
 
 export class App extends Component {
   static propTypes = {
@@ -55,19 +57,19 @@ export class App extends Component {
     );
 
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <Container>
+        <h1 className={s.mainHeader}>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
 
         <section>
-          <h2>Contacts</h2>
+          <h2 className={s.addHeader}>Contacts</h2>
           <Filter value={this.state.filter} onChange={this.changeFilter} />
 
-          <ul>
+          <ul className={s.list}>
             <ContactList data={visibleContacts} onClick={this.removeContact} />
           </ul>
         </section>
-      </div>
+      </Container>
     );
   }
 }
