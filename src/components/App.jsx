@@ -51,8 +51,9 @@ export class App extends Component {
   };
 
   render() {
-    const normalizedFilter = this.state.filter.toLowerCase();
-    const visibleContacts = this.state.contacts.filter(contact =>
+    const { filter, contacts } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    const visibleContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
 
@@ -63,7 +64,7 @@ export class App extends Component {
 
         <section>
           <h2 className={s.addHeader}>Contacts</h2>
-          <Filter value={this.state.filter} onChange={this.changeFilter} />
+          <Filter value={filter} onChange={this.changeFilter} />
 
           <ul className={s.list}>
             <ContactList data={visibleContacts} onClick={this.removeContact} />
