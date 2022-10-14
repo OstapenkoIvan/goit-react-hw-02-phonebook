@@ -1,0 +1,19 @@
+.btn {
+  display: block;
+  margin: 15px auto 0;
+  padding: 10px 25px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background-color: #d7263d;
+  color: aliceblue;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #02182b;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

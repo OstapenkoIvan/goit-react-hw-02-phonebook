@@ -66,9 +66,7 @@ export class App extends Component {
           <h2 className={s.addHeader}>Contacts</h2>
           <Filter value={filter} onChange={this.changeFilter} />
 
-          <ul className={s.list}>
-            <ContactList data={visibleContacts} onClick={this.removeContact} />
-          </ul>
+          <ContactList data={visibleContacts} onClick={this.removeContact} />
         </section>
       </Container>
     );

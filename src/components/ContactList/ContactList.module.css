@@ -1,23 +1,12 @@
-.pEl {
-  display: inline;
-}
-.btn {
-  display: block;
-  margin: 15px auto 0;
-  padding: 5px 15px;
-
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.listItem {
-  width: 180px;
-  padding: 15px;
-  border: 1px dotted black;
-  border-radius: 5px;
-  background-color: #ccc;
-}
-
 /* .listItem:not(:first-child) {
   margin-top: 15px;
 } */
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}

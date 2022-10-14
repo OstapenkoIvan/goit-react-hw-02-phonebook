@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ContactListItem from '../ContactListItem/ContactListItem';
 import s from './ContactList.module.css';
 
 export class ContactList extends Component {
@@ -8,19 +9,18 @@ export class ContactList extends Component {
 
   render() {
     const arr = this.props.data;
-    return arr.map(({ id, name, number }) => (
-      <li key={id} className={s.listItem}>
-        <p className={s.pEl}>{name}</p>:{' '}
-        <span className={s.spanEl}>{number}</span>
-        <button
-          className={s.btn}
-          type="button"
-          onClick={() => this.removeContact(id)}
-        >
-          Delete
-        </button>
-      </li>
-    ));
+
+    return (
+      <ul className={s.list}>
+        {arr.map(item => (
+          <ContactListItem
+            key={item.id}
+            data={item}
+            handleClick={this.removeContact}
+          />
+        ))}
+      </ul>
+    );
   }
 }
 
